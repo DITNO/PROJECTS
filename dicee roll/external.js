@@ -6,3 +6,14 @@ image1.setAttribute("src",randomDiceimg1);
 var randomNumber2 = Math.floor(Math.random()*6)+1;
 var randomDiceimg2 = "./images/dice"+randomNumber2+".png";
 document.querySelectorAll("img")[1].setAttribute("src",randomDiceimg2);
+if(randomDiceimg1 > randomDiceimg2){
+    document.querySelector("h1").innerHTML = "Player 1 wins";
+}
+else if (randomDiceimg1 < randomDiceimg2) {
+    document.querySelector("h1").innerHTML = "Player 2 wins";
+
+}
+else {
+    document.querySelector("h1").innerHTML = "draw";
+
+}
