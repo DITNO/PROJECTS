@@ -8,6 +8,7 @@ for (var i =0;i<drumelement;i++){
         
         var buttoninnerHTML = this.innerHTML;
         keycheck(buttoninnerHTML);
+        buttonanimation(buttoninnerHTML);
 
     }
 }
@@ -15,6 +16,7 @@ for (var i =0;i<drumelement;i++){
 document.addEventListener("keydown",function(event) {
     var keypressuser = event.key;
     keycheck(keypressuser);
+    buttonanimation(keypressuser);
 });
 
 function keycheck (key){
@@ -50,4 +52,13 @@ function keycheck (key){
         default: console.log(keypressuser);
             break;
     }
+}
+
+function buttonanimation(currentkey){
+    var stlect = document.querySelector("."+currentkey);
+    stlect.classList.add('pressed');
+    setTimeout(function(){
+        stlect.classList.remove('pressed');
+    }, 300);
+
 }
